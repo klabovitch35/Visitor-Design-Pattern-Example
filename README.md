@@ -2,6 +2,27 @@
 
 This is a Java Maven Project Template
 
+#Provide a description of the application use case scenario that you have selected for your final project.
+
+The video recording is uploaded and published on blackboard.
+
+The use case that I have found for applying the Visitor pattern is for creating a report on a tennis match. In a tennis match,
+data is aggregated under its parent, Matches are collections of Sets, Sets are collections of games, games are collections of points, 
+etc. A report needs to be able to go through all of these components and subcomponents, and aggregate information about the whole
+as well as its individual parts. My goal through my design was to build a hierarchy of Match components in a way that was
+simple and understandable as possible, and utilize the Visitor pattern to make the reporting understandable. I also used the Factory pattern to
+make data setup easier, and encapsulate any logic to create instances of MatchComponents in the class. 
+
+In my architecture, I aggregate all components under the one directly related to it in an ArrayList. These components are all included
+in the package MatchComponents. This fulfills the design goal of low coupling, as each component only knows about the one below it, and is
+not dependent on the one above it, and high cohesion, as all of these classes relate to each other being parts of the same match. The flexibility
+of my design means that if a new type of match component is added (e.g. the individual shots that make up a point), or if Sets need to be decomposed into
+subsets, then the new type can extend the Match Component abstract class template requiring no other classes to change. If a new type of report is needed, 
+then that report type can implement the MatchVisitor type, with the template laid out to ensure standardization.
+
+
+
+
 
 # How to compile the project
 
